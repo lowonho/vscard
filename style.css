@@ -89,7 +89,6 @@ body {
   line-height: 1.6;
 }
 
-/* 관심사 네모칸 영역 */
 .interest-tags {
   display: flex;
   justify-content: center;
@@ -190,44 +189,6 @@ body {
   color: var(--primary);
 }
 
-.value a:focus-visible,
-.github-button:focus-visible {
-  outline: 3px solid var(--primary-strong);
-  outline-offset: 4px;
-}
-
-.github-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 58px;
-  margin-top: 2px;
-  padding: 16px 20px;
-  color: #0b1020;
-  background: var(--primary);
-  border: 1px solid var(--primary);
-  border-radius: 14px;
-  font-size: 17px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.github-button:hover {
-  transform: translateY(-2px);
-  background: var(--primary-strong);
-  box-shadow:
-    0 8px 22px rgba(178, 204, 255, 0.24);
-}
-
-.github-button:active {
-  transform: translateY(0);
-}
-
 .copy-status {
   min-height: 20px;
   margin-top: 14px;
@@ -236,8 +197,75 @@ body {
   font-weight: 600;
 }
 
+/* GitHub 및 소개 영상 버튼 영역 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 58px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* GitHub 버튼 */
+.github-button {
+  color: #0b1020;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.github-button:hover {
+  transform: translateY(-2px);
+  background: var(--primary-strong);
+  border-color: var(--primary-strong);
+  box-shadow:
+    0 8px 22px rgba(178, 204, 255, 0.24);
+}
+
+/* 소개 영상 버튼 */
+.intro-button {
+  color: var(--primary);
+  background: var(--panel);
+  border: 1px solid var(--primary);
+}
+
+.intro-button:hover {
+  transform: translateY(-2px);
+  color: #0b1020;
+  background: var(--primary);
+  box-shadow:
+    0 8px 22px rgba(178, 204, 255, 0.24);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.value a:focus-visible,
+.action-button:focus-visible {
+  outline: 3px solid var(--primary-strong);
+  outline-offset: 4px;
+}
+
 .footer {
-  margin-top: 14px;
+  margin-top: 20px;
   color: #777777;
   font-size: 13px;
 }
@@ -246,7 +274,7 @@ body {
   .business-card,
   .interest-tag,
   .info-item,
-  .github-button,
+  .action-button,
   .value a {
     transition: none;
   }
@@ -254,7 +282,7 @@ body {
   .business-card:hover,
   .interest-tag:hover,
   .info-item:hover,
-  .github-button:hover {
+  .action-button:hover {
     transform: none;
   }
 }
@@ -292,5 +320,11 @@ body {
 
   .value {
     font-size: 15px;
+  }
+
+  .action-button {
+    min-height: 54px;
+    padding: 14px 16px;
+    font-size: 16px;
   }
 }
