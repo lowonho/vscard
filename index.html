@@ -2,9 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="이상호의 디지털 웹 명함" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="이상호의 디지털 웹 명함"
+  />
+
   <title>이상호 | 웹 명함</title>
+
   <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
 </head>
@@ -12,32 +20,71 @@
 <body>
   <main class="business-card">
     <div class="profile">
-      <img id="profileImage" src="./game1.png" alt="이상호 프로필 이미지" />
+      <img
+        id="profileImage"
+        src="./game1.png"
+        alt="이상호 프로필 이미지"
+      />
     </div>
 
     <h1 class="name">이상호</h1>
+
     <p class="job">
       창의적인 생각으로 새로운 게임을 창작해내는 것을<br />
       지향하는 기획자입니다.
     </p>
 
+    <div
+      class="interest-tags"
+      aria-label="관심 분야"
+    >
+      <div class="interest-tag">★독서광</div>
+      <div class="interest-tag">◆게임덕후</div>
+    </div>
+
     <div class="info">
       <div class="info-item">
-        <div class="icon" aria-hidden="true">✉️</div>
+        <div
+          class="icon"
+          aria-hidden="true"
+        >
+          ✉️
+        </div>
+
         <div class="info-content">
           <div class="label">Email</div>
+
           <div class="value">
-            <a id="emailLink" href="mailto:sa199902@naver.com">sa199902@naver.com</a>
+            <a
+              id="emailLink"
+              href="mailto:sa199902@naver.com"
+              title="클릭하여 이메일 주소 복사"
+            >
+              sa199902@naver.com
+            </a>
           </div>
         </div>
       </div>
 
       <div class="info-item">
-        <div class="icon" aria-hidden="true">📞</div>
+        <div
+          class="icon"
+          aria-hidden="true"
+        >
+          📞
+        </div>
+
         <div class="info-content">
           <div class="label">Phone</div>
+
           <div class="value">
-            <a href="tel:01073737741">010-7373-7741</a>
+            <a
+              id="phoneLink"
+              href="tel:01073737741"
+              title="클릭하여 전화번호 복사"
+            >
+              010-7373-7741
+            </a>
           </div>
         </div>
       </div>
@@ -50,12 +97,20 @@
         rel="noopener noreferrer"
         aria-label="이상호의 GitHub 페이지 새 창에서 열기"
       >
-        ♥ Github 보기
+        ♥Github 보기
       </a>
     </div>
 
-    <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
-    <footer class="footer">© 2026 Digital Business Card</footer>
+    <p
+      id="copyStatus"
+      class="copy-status"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+    <footer class="footer">
+      © 2026 Digital Business Card
+    </footer>
   </main>
 </body>
 </html>
