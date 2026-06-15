@@ -1,10 +1,14 @@
 :root {
   --bg: #000000;
   --card: #111111;
-  --primary: #B2CCFF;
+  --primary: #b2ccff;
+  --primary-strong: #d4e1ff;
   --text: #ffffff;
   --sub: #a0a0a0;
-  --border: #B2CCFF;
+  --border: #b2ccff;
+  --panel: #1a1a1a;
+  --panel-border: #2a2a2a;
+  --icon-bg: #1e2a45;
 }
 
 * {
@@ -18,52 +22,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg);
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
 .business-card {
   width: 100%;
   max-width: 450px;
-  background: var(--card);
-  border-radius: 30px;
   padding: 40px 30px;
-  border: 2px solid #B2CCFF;
-  box-shadow: 0 0 30px rgba(178, 204, 255, 0.15);
+  overflow: hidden;
   text-align: center;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(178, 204, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .business-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 45px rgba(178, 204, 255, 0.25);
+  }
 }
 
 .profile {
   width: 150px;
   height: 150px;
   margin: 0 auto 24px;
-  border-radius: 50%;
   overflow: hidden;
   border: 5px solid #222222;
+  border-radius: 50%;
   box-shadow: 0 0 25px rgba(178, 204, 255, 0.2);
 }
 
 .profile img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .name {
+  margin-bottom: 8px;
+  color: var(--text);
   font-size: 35px;
   font-weight: 800;
-  color: var(--text);
-  margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
 
 .job {
-  font-size: 18px;
-  color: var(--primary);
-  font-weight: 600;
   margin-bottom: 30px;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .info {
@@ -77,55 +92,119 @@ body {
   align-items: center;
   gap: 15px;
   padding: 18px;
-  border: 1px solid #2a2a2a;
-  border-radius: 18px;
-  background: #1a1a1a;
   text-align: left;
-  transition: all 0.3s ease;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .info-item:hover {
-  border-color: #B2CCFF;
   transform: translateY(-2px);
+  border-color: var(--border);
   box-shadow: 0 0 15px rgba(178, 204, 255, 0.15);
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: #1e2a45;
   display: flex;
+  flex: 0 0 48px;
   justify-content: center;
   align-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--icon-bg);
+  border-radius: 14px;
   font-size: 22px;
 }
 
+.info-content {
+  min-width: 0;
+}
+
 .label {
+  margin-bottom: 4px;
   color: var(--sub);
   font-size: 13px;
-  margin-bottom: 4px;
 }
 
 .value {
   color: var(--text);
   font-size: 16px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .value a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .value a:hover {
   color: var(--primary);
 }
 
+.value a:focus-visible,
+.github-button:focus-visible {
+  outline: 3px solid var(--primary-strong);
+  outline-offset: 4px;
+}
+
+.github-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 58px;
+  margin-top: 2px;
+  padding: 16px 20px;
+  color: #0b1020;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.github-button:hover {
+  transform: translateY(-2px);
+  background: var(--primary-strong);
+  box-shadow: 0 8px 22px rgba(178, 204, 255, 0.24);
+}
+
+.github-button:active {
+  transform: translateY(0);
+}
+
+.copy-status {
+  min-height: 20px;
+  margin-top: 14px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .footer {
-  margin-top: 28px;
+  margin-top: 14px;
   color: #777777;
   font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .business-card,
+  .info-item,
+  .github-button,
+  .value a {
+    transition: none;
+  }
+
+  .business-card:hover,
+  .info-item:hover,
+  .github-button:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -140,5 +219,9 @@ body {
 
   .name {
     font-size: 30px;
+  }
+
+  .job {
+    font-size: 16px;
   }
 }

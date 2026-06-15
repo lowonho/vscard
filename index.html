@@ -3,43 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>웹 명함</title>
+  <meta name="description" content="이상호의 디지털 웹 명함" />
+  <title>이상호 | 웹 명함</title>
   <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
 </head>
 
 <body>
-  <div class="business-card">
+  <main class="business-card">
     <div class="profile">
-      <img id="profileImage" src="./game1.png" alt="프로필 이미지" />
+      <img id="profileImage" src="./game1.png" alt="이상호 프로필 이미지" />
     </div>
 
     <h1 class="name">이상호</h1>
-    <p class="job">창의적인 생각으로 새로운 게임을 창작해내는 것을 지향하는 기획자입니다.</p>
+    <p class="job">
+      창의적인 생각으로 새로운 게임을 창작해내는 것을 지향하는 기획자입니다.
+    </p>
 
     <div class="info">
       <div class="info-item">
-        <div class="icon">✉️</div>
-        <div>
+        <div class="icon" aria-hidden="true">✉️</div>
+        <div class="info-content">
           <div class="label">Email</div>
           <div class="value">
-            <a href="mailto:hong@example.com">sa199902@naver.com</a>
+            <a id="emailLink" href="mailto:sa199902@naver.com">sa199902@naver.com</a>
           </div>
         </div>
       </div>
 
       <div class="info-item">
-        <div class="icon">📞</div>
-        <div>
+        <div class="icon" aria-hidden="true">📞</div>
+        <div class="info-content">
           <div class="label">Phone</div>
           <div class="value">
-            <a href="tel:01012345678">010-7373-7741</a>
+            <a href="tel:01073737741">010-7373-7741</a>
           </div>
         </div>
       </div>
+
+      <a
+        id="githubButton"
+        class="github-button"
+        href="https://github.com/lowonho"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="이상호의 GitHub 페이지 새 창에서 열기"
+      >
+        ♥ Github 보기
+      </a>
     </div>
 
-    <div class="footer">© 2026 Digital Business Card</div>
-  </div>
+    <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+    <footer class="footer">© 2026 Digital Business Card</footer>
+  </main>
 </body>
 </html>
