@@ -197,7 +197,7 @@ body {
   font-weight: 600;
 }
 
-/* GitHub 및 소개 영상 버튼 영역 */
+/* 외부 링크 버튼 영역 */
 .action-buttons {
   display: flex;
   flex-direction: column;
@@ -235,21 +235,6 @@ body {
   transform: translateY(-2px);
   background: var(--primary-strong);
   border-color: var(--primary-strong);
-  box-shadow:
-    0 8px 22px rgba(178, 204, 255, 0.24);
-}
-
-/* 소개 영상 버튼 */
-.intro-button {
-  color: var(--primary);
-  background: var(--panel);
-  border: 1px solid var(--primary);
-}
-
-.intro-button:hover {
-  transform: translateY(-2px);
-  color: #0b1020;
-  background: var(--primary);
   box-shadow:
     0 8px 22px rgba(178, 204, 255, 0.24);
 }
