@@ -198,6 +198,21 @@ body {
 }
 
 /* 외부 링크 버튼 영역 */
+.portfolio-section {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+}
+
+.portfolio-title {
+  margin-bottom: 16px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .action-buttons {
   display: flex;
   flex-direction: column;
