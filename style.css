@@ -213,6 +213,38 @@ body {
   line-height: 1.5;
 }
 
+.portfolio-disclosure {
+  margin-top: 16px;
+}
+
+.portfolio-disclosure > summary {
+  list-style: none;
+  gap: 12px;
+}
+
+.portfolio-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.portfolio-disclosure > summary::after {
+  content: "+";
+}
+
+.portfolio-disclosure[open] > summary::after {
+  content: "−";
+}
+
+.document-buttons {
+  margin-top: 16px;
+}
+
+.document-buttons .action-button {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
 .action-buttons {
   display: flex;
   flex-direction: column;
