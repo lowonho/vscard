@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const profileImage = document.getElementById("profileImage");
-  const businessCard = document.querySelector(".business-card");
 
   // ID가 없어도 mailto, tel 링크를 자동으로 찾습니다.
   const emailLink =
@@ -28,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
         height="300"
         viewBox="0 0 300 300"
       >
-        <rect width="300" height="300" fill="#1e2a45" />
-        <circle cx="150" cy="115" r="52" fill="#b2ccff" />
+        <rect width="300" height="300" fill="#1a2635" />
+        <circle cx="150" cy="115" r="52" fill="#efbb78" />
         <path
           d="M55 270c10-65 52-95 95-95s85 30 95 95"
-          fill="#b2ccff"
+          fill="#efbb78"
         />
       </svg>
     `;
@@ -134,56 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
           "복사에 실패했습니다. 내용을 직접 선택해 주세요."
         );
       }
-    });
-  }
-
-  /**
-   * 카드가 위로 떠오르는 효과
-   */
-  if (businessCard) {
-    const defaultShadow =
-      "0 0 30px rgba(178, 204, 255, 0.15)";
-
-    const hoverShadow =
-      "0 20px 50px rgba(178, 204, 255, 0.3)";
-
-    businessCard.style.transition =
-      "transform 0.3s ease, box-shadow 0.3s ease";
-
-    businessCard.style.transform = "translateY(0) scale(1)";
-    businessCard.style.boxShadow = defaultShadow;
-    businessCard.style.willChange = "transform, box-shadow";
-
-    function liftCard() {
-      businessCard.style.transform =
-        "translateY(-12px) scale(1.01)";
-
-      businessCard.style.boxShadow = hoverShadow;
-    }
-
-    function resetCard() {
-      businessCard.style.transform =
-        "translateY(0) scale(1)";
-
-      businessCard.style.boxShadow = defaultShadow;
-    }
-
-    businessCard.addEventListener("pointerenter", liftCard);
-    businessCard.addEventListener("pointerleave", resetCard);
-
-    businessCard.addEventListener("focusin", liftCard);
-
-    businessCard.addEventListener("focusout", (event) => {
-      const nextElement = event.relatedTarget;
-
-      if (
-        nextElement instanceof Node &&
-        businessCard.contains(nextElement)
-      ) {
-        return;
-      }
-
-      resetCard();
     });
   }
 

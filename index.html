@@ -2,159 +2,265 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <meta
-    name="description"
-    content="이상호의 디지털 웹 명함"
-  />
-
-  <title>이상호 | 웹 명함</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101925" />
+  <meta name="description" content="게임 기획자 이상호의 포트폴리오. 직접 제작한 달빛식탁과 이터널 리턴 시스템 분석, 플레이와 독서 기록을 소개합니다." />
+  <title>이상호 | 게임 기획 포트폴리오</title>
   <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
 </head>
 
 <body>
   <main class="business-card">
-    <div class="profile">
-      <img
-        id="profileImage"
-        src="./game1.png"
-        alt="이상호 프로필 이미지"
-      />
-    </div>
+    <header class="identity">
+      <div class="profile">
+        <img id="profileImage" src="./game1.png" alt="게임을 플레이하는 인물 일러스트" />
+      </div>
+      <div>
+        <p class="role">게임 기획자</p>
+        <h1>이상호</h1>
+        <p class="intro">창의적인 생각으로 새로운 게임을 창작해내는 것을 지향하는 기획자입니다.</p>
+      </div>
+    </header>
 
-    <h1 class="name">이상호</h1>
-
-    <p class="job">
-      창의적인 생각으로 새로운 게임을 창작해내는 것을<br />
-      지향하는 기획자입니다.
-    </p>
-
-    <div
-      class="interest-tags"
-      aria-label="관심 분야"
-    >
-      <div class="interest-tag">★독서광</div>
-      <div class="interest-tag">◆게임덕후</div>
-    </div>
-
-    <details class="portfolio-section portfolio-disclosure contact-disclosure">
-      <summary class="action-button portfolio-button">연락처</summary>
-      <div class="info">
-      <div class="info-item">
-        <div
-          class="icon"
-          aria-hidden="true"
-        >
-          ✉️
-        </div>
-
-        <div class="info-content">
-          <div class="label">Email</div>
-
-          <div class="value">
-            <a
-              id="emailLink"
-              href="mailto:sa199902@naver.com"
-              title="클릭하여 이메일 주소 복사"
-            >
-              sa199902@naver.com
-            </a>
-          </div>
+    <section class="featured-game" aria-labelledby="featured-title">
+      <div class="game-cover">
+        <img src="./midnight-diner.webp" width="1920" height="1080"
+             alt="비 내리는 밤 골목에 달빛식탁 간판과 식당 창문이 따뜻하게 빛나는 게임 타이틀 일러스트" />
+        <div class="cover-caption">
+          <p>직접 제작한 게임</p>
+          <h2 id="featured-title">달빛식탁</h2>
         </div>
       </div>
-
-      <div class="info-item">
-        <div
-          class="icon"
-          aria-hidden="true"
-        >
-          📞
+      <div class="game-bar">
+        <p>낮에는 재료를 준비하고, 밤에는 손님에게 한 접시를 내는 요리 게임입니다.</p>
+        <div class="game-actions">
+          <a class="action-button play-button"
+             href="https://lowonho.github.io/Midnight-Diner/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="달빛식탁 게임 플레이 (새 탭)">게임 플레이</a>
+          <a class="action-button secondary-button"
+             href="https://drive.google.com/drive/folders/1QnZnjk5tSud8pO0oIv47t9aUAr-esiFE?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="달빛식탁 개발기 및 PV (새 탭)">개발기 및 PV</a>
         </div>
-
-        <div class="info-content">
-          <div class="label">Phone</div>
-
-          <div class="value">
-            <a
-              id="phoneLink"
-              href="tel:01073737741"
-              title="클릭하여 전화번호 복사"
-            >
-              010-7373-7741
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p
-      id="copyStatus"
-      class="copy-status"
-      role="status"
-      aria-live="polite"
-    ></p>
-    </details>
-
-    <section class="portfolio-section" aria-labelledby="portfolioTitle">
-      <h2 id="portfolioTitle" class="portfolio-title">개발 게임 : 달빛 식탁</h2>
-
-      <div class="action-buttons">
-      <a
-        class="action-button portfolio-button"
-        href="https://lowonho.github.io/Midnight-Diner/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="달빛식탁 게임 새 탭에서 열기"
-      >
-        게임 플레이
-      </a>
-
-      <a
-        class="action-button portfolio-button"
-        href="https://drive.google.com/drive/folders/1QnZnjk5tSud8pO0oIv47t9aUAr-esiFE?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="달빛식탁 개발기 및 PV Google Drive 폴더 새 탭에서 열기"
-      >
-        개발기 및 PV
-      </a>
       </div>
     </section>
 
-    <details class="portfolio-section portfolio-disclosure">
-      <summary class="action-button portfolio-button">이터널 리턴</summary>
-      <div class="action-buttons document-buttons">
-        <a
-          class="action-button portfolio-button"
-          href="https://drive.google.com/drive/folders/1YRc3qDqt8lpIMTsvCPlQGq1TYRKleX6U?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="금지구역 시스템 역기획서 Google Drive 폴더 새 탭에서 열기"
-        >
-          금지구역 시스템 역기획서
-        </a>
-        <a
-          class="action-button portfolio-button"
-          href="https://drive.google.com/drive/folders/1nf6_P2A2mYwdeWd8Ep26PNMblpW7d1ys?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="장비제작 시스템 문제분석 제안서 Google Drive 폴더 새 탭에서 열기"
-        >
-          장비제작 시스템 문제분석 제안서
-        </a>
+    <details class="disclosure analysis-panel">
+      <summary>
+        <span>이터널 리턴</span>
+        <span class="summary-note">시스템 역기획 · 개선 제안</span>
+      </summary>
+      <div class="document-links">
+        <a class="action-button secondary-button"
+           href="https://drive.google.com/drive/folders/1YRc3qDqt8lpIMTsvCPlQGq1TYRKleX6U?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="금지구역 시스템 역기획서 (새 탭)">금지구역 시스템 역기획서</a>
+        <a class="action-button secondary-button"
+           href="https://drive.google.com/drive/folders/1nf6_P2A2mYwdeWd8Ep26PNMblpW7d1ys?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="장비제작 시스템 문제분석 제안서 (새 탭)">장비제작 시스템 문제분석 제안서</a>
       </div>
     </details>
 
-    <footer class="footer">
-      © 2026 Digital Business Card
-    </footer>
+    <section class="personal-records" aria-label="관심사와 연락처">
+      <details class="disclosure">
+        <summary><span>독서광</span><span class="summary-note">읽은 책</span></summary>
+        <div class="detail-body">
+          <ul class="reading-list" aria-label="읽은 책 목록"></ul>
+          <p class="empty-state">아직 공개된 독서 기록이 없습니다.</p>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary><span>게임 덕후</span><span class="summary-note">플레이 기록</span></summary>
+        <div class="detail-body play-history">
+          <section aria-labelledby="steam-title">
+            <h3 id="steam-title">Steam 플레이 기록</h3>
+            <table aria-labelledby="steam-title">
+              <thead>
+                <tr><th scope="col">게임</th><th scope="col">플레이 시간</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">이터널 리턴<small>최고 티어 미스릴</small></th>
+                  <td>2,652.2시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">붉은사막<small>2회차 클리어</small></th>
+                  <td>278.6시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">팰월드</th>
+                  <td>202.4시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Slay the Spire II<small>아이언클래드·사일런트·디펙트 각각 10승천 달성</small></th>
+                  <td>124.8시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">래토피아</th>
+                  <td>91.7시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">EA SPORTS FC 25</th>
+                  <td>74시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">REMATCH</th>
+                  <td>51.1시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Escape from Duckov</th>
+                  <td>47.8시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">R.E.P.O.</th>
+                  <td>42시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ready or Not</th>
+                  <td>40시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Slay the Spire</th>
+                  <td>38.3시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">For The King<small>제3챕터 진행 중</small></th>
+                  <td>33.4시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">스텔라 블레이드</th>
+                  <td>32.8시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">호그와트 레거시</th>
+                  <td>27.2시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">로보토미 코퍼레이션</th>
+                  <td>27.2시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">데이브 더 다이버</th>
+                  <td>25.9시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Phasmophobia<small>모든 맵 어려움 난이도 클리어</small></th>
+                  <td>25.7시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">데스티니 가디언즈</th>
+                  <td>22시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ori and the Blind Forest: Definitive Edition</th>
+                  <td>19.9시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">림버스 컴퍼니<small>메인 스토리 제8장 클리어</small></th>
+                  <td>18.6시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dinkum</th>
+                  <td>17.3시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">PUBG: 배틀그라운드</th>
+                  <td>15.8시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">HoloCure</th>
+                  <td>13.3시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Skul: The Hero Slayer</th>
+                  <td>11.3시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chained Together</th>
+                  <td>10.2시간</td>
+                </tr>
+                <tr>
+                  <th scope="row">산나비</th>
+                  <td>9시간</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section aria-labelledby="other-title">
+            <h3 id="other-title">그 외 플레이 기록</h3>
+            <dl class="progress-list">
+              <div>
+                <dt>GTA 5</dt>
+                <dd>스토리 모드 및 GTA 온라인의 모든 습격 완료</dd>
+              </div>
+              <div>
+                <dt>TL(쓰론 앤 리버티)</dt>
+                <dd>출시 초창기 ‘뱁새단’ 길드에서 활동 / 소속 연합이 서버 1위 및 초창기 성주 달성</dd>
+              </div>
+              <div>
+                <dt>명조</dt>
+                <dd>제3장 제3막 「먼 길을 떠나는 별」의 에이메스와 여행하는 구간까지 진행</dd>
+              </div>
+              <div>
+                <dt>원신</dt>
+                <dd>수메르까지 스토리 진행 / 나선비경 12층의 세 방을 각각 3별로 완료해 총 9별 획득</dd>
+              </div>
+              <div>
+                <dt>붕괴: 스타레일</dt>
+                <dd>페나코니 메인 스토리의 로빈 관련 살인사건 조사 구간까지 진행</dd>
+              </div>
+              <div>
+                <dt>붕괴3rd</dt>
+                <dd>메인 스토리 플레이 / 붕괴후서 초반부 진행</dd>
+              </div>
+              <div>
+                <dt>소녀전선</dt>
+                <dd>지휘관 135레벨 / 인형 311기 보유 / 제10전역까지 S등급 클리어</dd>
+              </div>
+              <div>
+                <dt>소녀전선 2</dt>
+                <dd>현재 플레이 중 / 2026년 11월 기준 공개된 최신 스토리까지 완료</dd>
+              </div>
+              <div>
+                <dt>뉴럴 클라우드</dt>
+                <dd>제11지역 일반 난이도 클리어</dd>
+              </div>
+              <div>
+                <dt>카트라이더</dt>
+                <dd>중간 휴지기를 포함해 초등학생 때부터 서비스 종료까지 10년 이상에 걸쳐 플레이 / L1 라이선스 취득 / 등급전 100위 이내 진입 경험</dd>
+              </div>
+              <div>
+                <dt>명일방주</dt>
+                <dd>메인 스토리 제7장 진행 중</dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary><span>연락처</span><span class="summary-note">이메일 · 전화</span></summary>
+        <div class="detail-body">
+          <dl class="contact-list">
+            <div>
+              <dt>이메일</dt>
+              <dd><a id="emailLink" href="mailto:sa199902@naver.com" title="클릭하여 이메일 주소 복사">sa199902@naver.com</a></dd>
+            </div>
+            <div>
+              <dt>전화번호</dt>
+              <dd><a id="phoneLink" href="tel:01073737741" title="클릭하여 전화번호 복사">010-7373-7741</a></dd>
+            </div>
+          </dl>
+          <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </section>
+
+    <footer>© 2026 이상호</footer>
   </main>
 </body>
 </html>
