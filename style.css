@@ -217,6 +217,15 @@ body {
   margin-top: 16px;
 }
 
+.contact-disclosure {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.contact-disclosure .info {
+  margin-top: 16px;
+}
+
 .portfolio-disclosure > summary {
   list-style: none;
   gap: 12px;
