@@ -3,6 +3,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const profileImage = document.getElementById("profileImage");
 
+  for (const total of document.querySelectorAll(".personal-records details [data-record-items]")) {
+    const records = total.closest("details").querySelectorAll(total.dataset.recordItems);
+    total.textContent = `${records.length}개`;
+  }
+
   // ID가 없어도 mailto, tel 링크를 자동으로 찾습니다.
   const emailLink =
     document.getElementById("emailLink") ||
@@ -27,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
         height="300"
         viewBox="0 0 300 300"
       >
-        <rect width="300" height="300" fill="#1a2635" />
-        <circle cx="150" cy="115" r="52" fill="#efbb78" />
+        <rect width="300" height="300" fill="#c7dfd4" />
+        <circle cx="150" cy="115" r="52" fill="#193a34" />
         <path
           d="M55 270c10-65 52-95 95-95s85 30 95 95"
-          fill="#efbb78"
+          fill="#193a34"
         />
       </svg>
     `;
