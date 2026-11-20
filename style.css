@@ -240,10 +240,52 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
 .personal-records > details { border-bottom: 1px solid var(--line); }
 .detail-body { padding: 0.35rem 1.15rem 1.2rem; }
 
-.reading-list { padding-left: 1.3rem; }
+.reading-library {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.reading-shelf {
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--panel);
+}
+
+.reading-shelf > summary {
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.shelf-content {
+  margin: 0 0.9rem 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+}
+
+.reading-list {
+  padding-left: 1rem;
+  font-size: 0.92rem;
+}
+
 .reading-list li::marker { color: var(--amber); }
-.reading-list:empty, .reading-list:has(li) + .empty-state { display: none; }
-.empty-state { color: var(--muted); font-size: 0.9rem; }
+
+.shelf-content > .reading-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1.7rem;
+}
+
+.book-genre {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.15rem 0.9rem;
+}
+
+.book-genre + .book-genre { margin-top: 0.65rem; }
+.book-genre h3 { color: var(--amber); font-size: 0.86rem; }
+.book-genre .reading-list { display: flex; flex-wrap: wrap; gap: 0.1rem 1.4rem; }
 
 .play-history h3 {
   margin-bottom: 0.6rem;
@@ -297,6 +339,7 @@ h1, h2, h3, p, ul, dl, dd { margin: 0; }
 }
 
 .progress-list dt { font-weight: 600; }
+.progress-list dd:empty { display: none; }
 
 .contact-list > div {
   display: flex;
@@ -349,6 +392,7 @@ footer {
   .game-bar { display: grid; gap: 0.8rem; }
   .game-actions > a { flex: 1; }
   .document-links { grid-template-columns: 1fr; }
+  .shelf-content > .reading-list, .book-genre { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 27rem) {
