@@ -3,40 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#fff8e9" />
-  <meta name="description" content="게임 기획자 이상호의 포트폴리오. 직접 제작한 달빛식탁과 이터널 리턴 시스템 분석, 플레이와 독서 기록을 소개합니다." />
+  <meta name="theme-color" content="#e8f6f5" />
+  <meta name="description" content="게임 기획자 이상호의 포트폴리오. 직접 제작한 달빛식탁, 이터널 리턴 시스템 분석, 경력 사항과 플레이·독서 기록을 소개합니다." />
   <title>이상호 | 게임 기획 포트폴리오</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./fishing.css" />
   <script src="./script.js" defer></script>
+  <script src="./fishing.js" defer></script>
 </head>
 
 <body>
-  <main class="business-card">
+  <main class="business-card" data-portfolio-view="list">
     <header class="identity" id="top">
       <div class="masthead">
         <div class="signature">
-          <span class="pad-mark" aria-hidden="true"></span>
+          <img id="profileImage" src="./fishing/avatar.webp" width="32" height="32" alt="" />
           <strong>이상호</strong>
           <span>게임 기획자</span>
         </div>
-        <nav aria-label="페이지 탐색">
-          <a href="#works">작업</a>
+        <fieldset class="view-switch" aria-label="포트폴리오 보기 방식" hidden>
+          <label><input type="radio" name="portfolio-view" value="sea" checked /><span>바다 보기</span></label>
+          <label><input type="radio" name="portfolio-view" value="list" /><span>목록 보기</span></label>
+        </fieldset>
+        <nav aria-label="페이지 탐색" data-list-only>
+          <a href="#works">포트폴리오</a>
+          <a href="#career">경력</a>
           <a href="#records">활동 기록</a>
         </nav>
       </div>
-      <div class="intro-stage">
-        <h1>새롭고 재미있는<br /><span class="headline-mark">게임 시스템</span>을 만듭니다.</h1>
-        <div class="profile-console">
-          <span class="console-pad" aria-hidden="true"></span>
-          <span class="console-screen">
-            <img id="profileImage" src="./game1.png" alt="게임을 플레이하는 인물 일러스트" />
-          </span>
-          <span class="console-keys" aria-hidden="true"></span>
+      <div class="fishing-game" id="idea-fishing">
+        <div class="fishing-intro">
+          <h1>신선하고 창의적인 <span>아이디어를 찾는 기획자</span></h1>
+        </div>
+        <div class="fishing-board">
+          <div class="fishing-sea" role="group" aria-label="물속 메뉴">
+            <img class="sea-background" src="./fishing/sea.webp" alt="" />
+            <img class="fishing-boat" src="./fishing/penguin.webp" alt="수면 위 작은 배에서 낚싯대를 든 펭귄" />
+            <div class="fishing-rig" aria-hidden="true">
+              <span class="rig-rod"></span>
+              <span class="rig-line"></span>
+              <span class="rig-lure"><span class="bite-ring"></span></span>
+            </div>
+            <button type="button" class="motion-control" hidden>움직임 멈추기</button>
+            <div class="sea-notice">
+              <p id="hint-idle"><span class="hover-guide">물고기에 마우스를 올려보세요</span><span class="tap-guide">물고기를 탭해 설명 보기</span></p>
+              <p id="hint-touch" hidden>한 번 더 탭하면 열려요</p>
+              <p id="hint-catch" hidden><strong></strong> <span></span></p>
+            </div>
+            <nav class="sea-menus" aria-label="물고기로 메뉴 열기">
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-project" data-content="return-content" aria-labelledby="fish-return" aria-describedby="hint-return">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/bluefish.webp" data-mouth-y="0.63" alt="" />
+                    <span class="idea-label"><strong id="fish-return">이터널 리턴</strong><small>기획 문서 2종</small></span>
+                  </span>
+                </button>
+              </div>
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-project" data-content="diner-content" aria-labelledby="fish-diner" aria-describedby="hint-diner">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/moonfish.webp" data-mouth-y="0.60" alt="" />
+                    <span class="idea-label"><strong id="fish-diner">달빛식탁</strong><small>직접 만든 게임</small></span>
+                  </span>
+                </button>
+              </div>
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-career" data-content="career-content" aria-labelledby="fish-career" aria-describedby="hint-career">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/coralfish.webp" data-mouth-y="0.64" alt="" />
+                    <span class="idea-label"><strong id="fish-career">경력 사항</strong><small>근무 이력</small></span>
+                  </span>
+                </button>
+              </div>
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-reading" data-content="reading-content" aria-labelledby="fish-reading" aria-describedby="hint-reading">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/coralfish.webp" data-mouth-y="0.64" alt="" />
+                    <span class="idea-label"><strong id="fish-reading">독서광</strong><small>읽고 본 작품</small></span>
+                  </span>
+                </button>
+              </div>
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-playing" data-content="playing-content" aria-labelledby="fish-playing" aria-describedby="hint-playing">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/bluefish.webp" data-mouth-y="0.63" alt="" />
+                    <span class="idea-label"><strong id="fish-playing">게임 덕후</strong><small>플레이 기록</small></span>
+                  </span>
+                </button>
+              </div>
+              <div class="swim-lane">
+                <button type="button" class="fishing-idea swim-contact" data-content="contact-content" aria-labelledby="fish-contact" aria-describedby="hint-contact">
+                  <span class="idea-cargo">
+                    <img class="idea-fish" src="./fishing/moonfish.webp" data-mouth-y="0.60" alt="" />
+                    <span class="idea-label"><strong id="fish-contact">연락처</strong><small>이메일·전화</small></span>
+                  </span>
+                </button>
+              </div>
+            </nav>
+            <div class="fish-tooltips">
+              <p id="hint-return" role="tooltip">금지구역의 규칙을 풀어 쓴 역기획서와 장비 제작 개선 제안서예요.</p>
+              <p id="hint-diner" role="tooltip">직접 만든 타임루프 식당 게임을 플레이하고, 개발기·PV와 소스 코드를 볼 수 있어요.</p>
+              <p id="hint-career" role="tooltip">그동안 다닌 회사 이력을 알 수 있어요</p>
+              <p id="hint-reading" role="tooltip">고전 문학부터 웹소설과 웹툰까지, 읽고 본 작품을 분야별로 모았어요.</p>
+              <p id="hint-playing" role="tooltip">이터널 리턴 미스릴, 붉은사막 2회차 클리어 등 게임별 플레이 기록을 모았어요.</p>
+              <p id="hint-contact" role="tooltip">이메일과 전화번호를 확인하고 복사할 수 있어요.</p>
+            </div>
+            <div class="catch-layer" hidden>
+              <dialog class="fishing-catch" id="catch-panel" aria-labelledby="catch-title">
+                <div class="catch-heading">
+                  <div><p class="catch-kind"></p><h2 id="catch-title"></h2></div>
+                  <button class="catch-close" type="button" aria-label="닫고 바다로 돌아가기">닫기</button>
+                </div>
+                <div class="catch-scroll">
+                  <p id="catch-description" hidden></p>
+                  <div class="catch-content"></div>
+                </div>
+              </dialog>
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
-    <section class="projects" id="works" aria-labelledby="works-title">
+    <section class="projects" id="works" aria-labelledby="works-title" data-list-only>
       <h2 class="section-title" id="works-title">포트폴리오</h2>
       <div class="work-grid">
         <details class="work-card diner-card" name="portfolio-work">
@@ -49,14 +138,16 @@
               <span class="work-kind" id="diner-kind">직접 제작한 게임</span>
               <strong class="work-title" id="diner-title">달빛식탁</strong>
               <span class="work-description" id="diner-description">일주일이 반복되는 식당의 비밀을 풀기 위해 수상한 손님들을 대접하세요!</span>
-              <span class="work-action" id="diner-action"><span class="when-closed">게임과 개발기 보기</span><span class="when-open">접기</span><span class="toggle-sign" aria-hidden="true"></span></span>
+              <span class="work-action" id="diner-action"><span class="when-closed">게임과 개발 자료 보기</span><span class="when-open">접기</span><span class="toggle-sign" aria-hidden="true"></span></span>
             </span>
           </summary>
-          <div class="work-body project-links">
+          <div class="work-body project-links" id="diner-content">
             <a class="action-button primary-link" href="https://lowonho.github.io/Midnight-Diner/"
                target="_blank" rel="noopener noreferrer" aria-label="달빛식탁 게임 플레이 (새 탭)">게임 플레이</a>
             <a class="action-button" href="https://drive.google.com/drive/folders/1QnZnjk5tSud8pO0oIv47t9aUAr-esiFE?usp=sharing"
                target="_blank" rel="noopener noreferrer" aria-label="달빛식탁 개발기 및 PV (새 탭)">개발기 및 PV</a>
+            <a class="action-button" href="https://github.com/lowonho/Midnight-Diner"
+               target="_blank" rel="noopener noreferrer" aria-label="달빛식탁 GitHub 저장소 (새 탭)">GitHub 저장소</a>
           </div>
         </details>
 
@@ -70,21 +161,27 @@
               <span class="work-action" id="return-action"><span class="when-closed">기획 문서 보기</span><span class="when-open">접기</span><span class="toggle-sign" aria-hidden="true"></span></span>
             </span>
           </summary>
-          <div class="work-body project-links">
-            <a class="action-button" href="https://drive.google.com/drive/folders/1YRc3qDqt8lpIMTsvCPlQGq1TYRKleX6U?usp=sharing"
-               target="_blank" rel="noopener noreferrer" aria-label="금지구역 시스템 역기획서 (새 탭)">금지구역 시스템 역기획서</a>
-            <a class="action-button" href="https://drive.google.com/drive/folders/1nf6_P2A2mYwdeWd8Ep26PNMblpW7d1ys?usp=sharing"
-               target="_blank" rel="noopener noreferrer" aria-label="장비제작 시스템 문제분석 제안서 (새 탭)">장비제작 시스템 문제분석 제안서</a>
+          <div class="work-body project-links document-links" id="return-content">
+            <a id="zone-document" class="action-button" href="https://drive.google.com/drive/folders/1YRc3qDqt8lpIMTsvCPlQGq1TYRKleX6U?usp=sharing"
+               target="_blank" rel="noopener noreferrer" aria-label="금지구역 시스템 역기획서 (새 탭)" aria-describedby="zone-note">
+              <strong>금지구역 시스템 역기획서</strong>
+              <small id="zone-note">금지구역의 지정과 타이머가 이동 경로와 교전 시점에 미치는 영향을 분석했습니다.</small>
+            </a>
+            <a id="equipment-document" class="action-button" href="https://drive.google.com/drive/folders/1nf6_P2A2mYwdeWd8Ep26PNMblpW7d1ys?usp=sharing"
+               target="_blank" rel="noopener noreferrer" aria-label="장비제작 시스템 문제분석 제안서 (새 탭)" aria-describedby="equipment-note">
+              <strong>장비제작 시스템 문제분석 제안서</strong>
+              <small id="equipment-note">장비 제작 중 필요한 정보를 찾기 어려운 지점을 짚고, 안내와 화면 구성의 개선안을 제안했습니다.</small>
+            </a>
           </div>
         </details>
       </div>
     </section>
 
-    <section class="personal-records" id="records" aria-labelledby="records-title">
+    <section class="personal-records" id="records" aria-labelledby="records-title" data-list-only>
       <h2 class="section-title" id="records-title">기록과 연락처</h2>
       <details class="disclosure">
-        <summary><span>독서광</span><span class="summary-note">읽고 본 작품 <b data-record-items=".reading-list li"></b></span></summary>
-        <div class="detail-body reading-library">
+        <summary><span>독서광</span><span class="summary-note">도서·웹소설·웹툰 등 <b data-record-items=".reading-list li"></b></span></summary>
+        <div class="detail-body reading-library" id="reading-content">
           <details class="disclosure reading-shelf" name="reading-shelf" open>
             <summary><span>일반 도서</span><span class="summary-note">14종</span></summary>
             <div class="shelf-content">
@@ -222,8 +319,8 @@
       </details>
 
       <details class="disclosure">
-        <summary><span>게임 덕후</span><span class="summary-note">플레이한 게임 <b data-record-items="tbody tr, .progress-list dt"></b></span></summary>
-        <div class="detail-body play-history">
+        <summary><span>게임 덕후</span><span class="summary-note">게임별 플레이 시간과 진행 기록 <b data-record-items="tbody tr, .progress-list dt"></b></span></summary>
+        <div class="detail-body play-history" id="playing-content">
           <section aria-labelledby="steam-title">
             <h3 id="steam-title">Steam 플레이 기록</h3>
             <table aria-labelledby="steam-title">
@@ -396,7 +493,8 @@
 
       <details class="disclosure">
         <summary><span>연락처</span><span class="summary-note">이메일 · 전화</span></summary>
-        <div class="detail-body">
+        <div class="detail-body" id="contact-content">
+          <p class="contact-hint">이메일 주소나 전화번호를 누르면 복사됩니다.</p>
           <dl class="contact-list">
             <div>
               <dt>이메일</dt>
@@ -412,7 +510,34 @@
       </details>
     </section>
 
-    <footer><span>© 2026 이상호</span><a href="#top">처음으로 ↑</a></footer>
+    <section id="career" aria-labelledby="career-title" data-list-only>
+      <h2 class="section-title" id="career-title">경력 사항</h2>
+      <ol class="career-list" id="career-content" role="list">
+        <li>
+          <div>
+            <h3>쿠팡 주식회사</h3>
+            <p>데이터라벨러</p>
+          </div>
+          <p class="career-period"><time datetime="2024-05">2024.05</time> ~ <time datetime="2026-06">2026.06</time> <small>2년 2개월</small></p>
+        </li>
+        <li>
+          <div>
+            <h3>(주)메이크인</h3>
+            <p>이데일리 C&amp;B 파견 사원 · 방송 프로그램 컷 편집 및 유튜브 업로드</p>
+          </div>
+          <p class="career-period"><time datetime="2022-01">2022.01</time> ~ <time datetime="2023-11">2023.11</time> <small>1년 11개월</small></p>
+        </li>
+        <li>
+          <div>
+            <h3>주식회사 오즈글로벌</h3>
+            <p>휴대폰 판매 사원</p>
+          </div>
+          <p class="career-period"><time datetime="2018-02">2018.02</time> ~ <time datetime="2018-10">2018.10</time> <small>9개월</small></p>
+        </li>
+      </ol>
+    </section>
+
+    <footer data-list-only><span>© 2026 이상호</span><a href="#top">처음으로 ↑</a></footer>
   </main>
 </body>
 </html>
