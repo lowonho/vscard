@@ -192,7 +192,7 @@
   margin-inline: 2.5%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: 1.15fr 1fr;
+  grid-template-rows: minmax(max-content, 1.15fr) 1fr;
 }
 .swim-lane {
   display: grid;
@@ -261,7 +261,7 @@
 .is-reeling .idea-label { visibility: hidden; }
 @media (hover: hover) {
   .has-previews .hover-guide { display: inline; }
-  .has-previews .tap-guide, .has-previews .idea-label small { display: none; }
+  .has-previews .tap-guide, .has-previews .fishing-idea:not(.swim-project) .idea-label small { display: none; }
   .fishing-idea:hover .idea-label { background: #ffe091; }
 }
 
@@ -335,7 +335,7 @@
 .work-body[id], .detail-body[id] { scroll-margin-block-start: 4rem; }
 
 @media (min-width: 34rem) and (max-height: 49rem) {
-  .identity .fishing-sea { max-height: max(22rem, calc(100svh - 14rem)); }
+  .identity .fishing-sea { max-height: max(24.5rem, calc(100svh - 14rem)); }
   .identity .idea-fish { max-height: 6svh; }
   .identity .swim-project .idea-fish { max-height: 9svh; }
 }
